@@ -1,4 +1,4 @@
-# Auren Fase 5 — Monorepo
+# Auren Fase 6 — Monorepo
 
 Repositório monolítico contendo três projetos integrados para uma solução de educação financeira personalizada:
 
