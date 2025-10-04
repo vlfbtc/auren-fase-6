@@ -1,0 +1,49 @@
+@base = http://localhost:8080
+@email = alice@example.net
+@password = test123
+@userId = 21
+@token = {{login.response.body.$.accessToken}}
+
+### Login
+# @name login
+POST {{base}}/api/v1/auth/login
+Content-Type: application/json
+
+{ "email": "{{email}}", "password": "{{password}}" }
+
+### Visualizar transações
+GET {{base}}/api/v1/users/{{userId}}/transactions?limit=20
+Authorization: Bearer {{token}}
+
+### Criar transação
+POST {{base}}/api/v1/users/{{userId}}/transactions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "description": "Notebook Gamer",
+  "type": "EXPENSE",
+  "amount": 4999.99,
+  "date": "2025-10-01",
+  "category": "Eletrônicos"
+}
+
+### Monthly balance (function)
+GET {{base}}/api/v1/users/{{userId}}/reports/monthly-balance?month=9&year=2025
+Authorization: Bearer {{token}}
+
+### DB summary 
+GET {{base}}/api/v1/users/{{userId}}/reports/db-summary
+Authorization: Bearer {{token}}
+
+### Category report
+GET {{base}}/api/v1/users/{{userId}}/reports/category-report
+Authorization: Bearer {{token}}
+
+### Alerta
+GET {{base}}/api/v1/users/{{userId}}/alerts?limit=10
+Authorization: Bearer {{token}}
+
+### Health check
+GET {{base}}/actuator/health
+Authorization: Bearer {{token}}

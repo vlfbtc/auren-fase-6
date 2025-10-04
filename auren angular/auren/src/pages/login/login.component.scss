@@ -1,0 +1,15 @@
+.login-card {
+  width: 360px; max-width: 90vw; background: #fff; border: 1px solid #e5e7eb;
+  border-radius: 12px; padding: 20px; display: grid; gap: 10px; margin: 40px auto;
+}
+h2 { margin: 0 0 6px; }
+label { font-size: 12px; color: #6b7280; }
+input {
+  padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; outline: none;
+}
+button {
+  margin-top: 6px; background: #0f766e; color: #fff; border: 0; padding: 10px;
+  border-radius: 8px; cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: default; }
+.error { color: #b91c1c; margin: 6px 0 0; font-size: 13px; }

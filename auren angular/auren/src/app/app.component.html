@@ -1,0 +1,13 @@
+<header class="topbar">
+  <div class="brand">Auren Admin</div>
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/admin" routerLinkActive="active">Transações</a>
+    <a routerLink="/insights" routerLinkActive="active">Insights</a>
+    <button class="logout" (click)="logout()">Sair</button>
+  </nav>
+</header>
+
+<main class="page">
+  <router-outlet></router-outlet>
+</main>

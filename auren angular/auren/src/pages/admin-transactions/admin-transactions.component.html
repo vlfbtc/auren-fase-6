@@ -1,0 +1,51 @@
+<h2>Admin • Transações</h2>
+
+<section class="filters">
+  <label>De:
+    <input type="date" [(ngModel)]="from">
+  </label>
+  <label>Até:
+    <input type="date" [(ngModel)]="to">
+  </label>
+  <label>Limite:
+    <input type="number" min="1" [(ngModel)]="limit">
+  </label>
+  <button (click)="load()">Buscar</button>
+  <button class="primary" (click)="new()">Nova</button>
+</section>
+
+<section class="card">
+  <div *ngIf="loading">Carregando...</div>
+  <div class="error" *ngIf="error">{{ error }}</div>
+
+  <table *ngIf="!loading && list.length">
+    <thead>
+      <tr>
+        <th>Data</th><th>Descrição</th><th>Categoria</th><th>Tipo</th>
+        <th style="text-align:right">Valor</th><th style="width:140px"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of list">
+        <td>{{ t.date | date:'yyyy-MM-dd' }}</td>
+        <td>{{ t.description }}</td>
+        <td>{{ t.category }}</td>
+        <td>{{ t.type }}</td>
+        <td style="text-align:right">{{ t.amount | number:'1.2-2' }}</td>
+        <td>
+          <button (click)="edit(t)">Editar</button>
+          <button class="danger" (click)="remove(t)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!loading && !list.length">Nenhum registro.</p>
+</section>
+
+<app-transaction-form
+  *ngIf="editing"
+  [model]="editing"
+  (save)="save($event)"
+  (cancel)="cancel()">
+</app-transaction-form>

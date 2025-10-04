@@ -1,0 +1,22 @@
+# Maven/Java
+/target/
+/.idea/
+*.iml
+*.log
+*.tmp
+*.swp
+*.DS_Store
+# Eclipse
+.classpath
+.project
+.settings/
+# OS
+Thumbs.db
+.DS_Store
+# H2 Database
+*.mv.db
+*.trace.db
+# VSCode
+.vscode/
+# Env
+application-local.properties

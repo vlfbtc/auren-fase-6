@@ -1,0 +1,24 @@
+<div class="page">
+  <h2>Insights</h2>
+  <button (click)="refresh()">Atualizar
+    <span *ngIf="loading" class="spinner-inline"></span>
+  </button>
+
+  <h3>Recomendações</h3>
+  <div class="tip" *ngFor="let t of data.tips | slice:0:5">
+    <div class="dot" [ngClass]="t.priority"></div>
+    <div class="text">
+      <strong>{{ t.title }}</strong>
+      <div>{{ t.description }}</div>
+      <small class="meta">{{ t.category }} • {{ t.contentType }}</small>
+    </div>
+  </div>
+
+  <h3>Conteúdo</h3>
+  <div class="card" *ngFor="let c of data.content | slice:0:6">
+    <div class="type">{{ c.type }}</div>
+    <div class="title">{{ c.title }}</div>
+    <div class="desc">{{ c.description }}</div>
+    <button (click)="open(c.url)">Abrir</button>
+  </div>
+</div>

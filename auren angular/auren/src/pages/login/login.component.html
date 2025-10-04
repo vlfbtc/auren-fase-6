@@ -1,0 +1,15 @@
+<form (ngSubmit)="submit()" #f="ngForm" class="login-card">
+  <h2>Auren Admin</h2>
+
+  <label>Email</label>
+  <input name="email" [(ngModel)]="email" type="email" required />
+
+  <label>Senha</label>
+  <input name="password" [(ngModel)]="password" type="password" required />
+
+  <button [disabled]="loading || !f.valid" type="submit">
+    {{ loading ? 'Entrando...' : 'Entrar' }}
+  </button>
+
+  <p *ngIf="error" class="error">{{ error }}</p>
+</form>

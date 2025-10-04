@@ -1,0 +1,49 @@
+<h2>Bem-vindo(a) 👋</h2>
+
+<div class="global-loading-overlay" [class.visible]="loading">
+  <div class="spinner"></div>
+</div>
+
+<section class="charts">
+  <div class="chart-card">
+    <h3>Renda (últimos lançamentos)</h3>
+    <canvas baseChart
+      [data]="incomeBarData"
+      chartType="bar"
+      [options]="{responsive:true, plugins:{legend:{display:false}}}">
+    </canvas>
+  </div>
+  <div class="chart-card">
+    <h3>Despesas por categoria</h3>
+    <canvas baseChart
+      [data]="expensePieData"
+      chartType="pie"
+      [options]="{responsive:true, plugins:{legend:{position:'bottom'}}}">
+    </canvas>
+  </div>
+</section>
+
+<section class="card">
+  <h3>Transações recentes <button (click)="load()" style="float:right">Atualizar</button></h3>
+  <div *ngIf="loading">Carregando...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <table *ngIf="!loading && list.length">
+    <thead>
+    <tr><th>Data</th><th>Descrição</th><th>Categoria</th><th>Tipo</th><th style="text-align:right">Valor</th></tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let t of list">
+      <td>{{ t.date | date:'dd/MM/yyyy' }}</td>
+      <td>{{ t.description }}</td>
+      <td>{{ t.category }}</td>
+      <td>{{ t.type }}</td>
+      <td style="text-align:right">{{ t.amount | number:'1.2-2' }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!loading && !list.length">Sem transações.</p>
+</section>
+
+

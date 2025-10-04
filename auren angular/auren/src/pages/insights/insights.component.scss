@@ -1,0 +1,28 @@
+.page{ padding:16px; }
+button{ margin-bottom:12px; padding:8px 12px; border:none; border-radius:8px; background:#0ea5a5; color:#fff; cursor:pointer; }
+.tip{ display:flex; gap:8px; margin:8px 0; }
+.dot{ width:10px; height:10px; border-radius:50%; margin-top:6px; background:#9ca3af; }
+.dot.low{ background:#93c5fd; }
+.dot.medium{ background:#fbbf24; }
+.dot.high{ background:#f87171; }
+.text .meta{ color:#6b7280; }
+.card{ border:1px solid #eee; padding:12px; border-radius:8px; margin:8px 0; }
+.type{ font-size:12px; color:#6b7280; text-transform:uppercase; }
+.title{ font-weight:600; margin:4px 0; }
+.desc{ color:#374151; margin-bottom:8px; }
+
+.spinner-inline {
+	display: inline-block;
+	margin-left: 8px;
+	width: 16px;
+	height: 16px;
+	border: 2px solid #e5e7eb;
+	border-top: 2px solid #0ea5a5;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	vertical-align: middle;
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,9 @@
+.topbar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; background:#0f766e; color:#fff;
+}
+.topbar .brand { font-weight:700; }
+.topbar nav a { color:#fff; text-decoration:none; margin-right:16px; }
+.topbar nav a.active { text-decoration:underline; }
+.topbar .logout { background:#134e4a; color:#fff; border:0; padding:6px 10px; border-radius:6px; cursor:pointer; }
+.page { padding:24px; }

@@ -1,0 +1,63 @@
+# .gitignore
+
+# MacOS
+.DS_Store
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+*.log
+*.tmp
+*.swp
+
+# Node/Angular
+node_modules/
+dist/
+.angular/
+output/
+.env
+
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+build/
+coverage/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+
+# Android/iOS (Flutter)
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+ios/Pods/
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+macos/Pods/
+macos/Flutter/ephemeral/
+
+# Java/Maven
+/target/
+.classpath
+.project
+.settings/
+*.mv.db
+*.trace.db
+
+# Outros
+Thumbs.db
+
+# Exceções para arquivos de configuração úteis
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
